@@ -57,6 +57,10 @@ background-color:#CCFFFF;
 margin: 100px;
 font-family: Gill Sans MT, sans-serif;
 font-size: 20px;
+}
 
-
+.message {
+    font-family: Gill Sans MT, sans-serif;
+    font-size: 15px;
+    color: #d2e431f3;
 }

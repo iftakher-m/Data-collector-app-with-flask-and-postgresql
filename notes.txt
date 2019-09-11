@@ -1,3 +1,13 @@
+######## Libraries required #####################
+
+# pip install flask
+# pip install psycopg2 >> to work with postgres in python
+
+# pip install Flask-SQLAlchemy >> when to be used with flask, and it is more flexible and based on psycopg2 so psycopg2 has to be installed first
+
+
+
+
 ###### Some notes required for this project #############
 
 app.config["SQLALCHEMY_DATABASE_URI"]= "postgresql://postgres:iftakher@localhost/Height_collector" # this is to connect the flask variable to the database, first pass a list ["SQLALCHEMY_DATABASE_URI"] which is a dictionary key that is equal to 
