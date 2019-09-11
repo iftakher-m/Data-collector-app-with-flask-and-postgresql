@@ -1,13 +1,13 @@
 from email.mime.text import MIMEText
 import smtplib
 
-def send_email(email, height):
+def send_email(email, height, average_height, count):
     sender_email= "iftakher@zoho.com"
     sender_password= "esY7KU8w5pxx"
     receiver_email= email
 
     subject= "Height statistics"
-    message= "Hey there, your height is <strong> {} </strong>" .format(height)
+    message= f"Hey there, your height is <strong>{height}</strong> cm <br> and average height is <strong>{average_height}</strong> cm <br> and that is derived out of <strong> {count} </strong> people's data "
 
     msg= MIMEText(message, "html") # this means the string inside 'message' variable will be read as html
     

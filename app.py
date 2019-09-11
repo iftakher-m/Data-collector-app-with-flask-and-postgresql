@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_email import send_email
-
+from sqlalchemy.sql import func
 
 app=Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"]= "postgresql://postgres:iftakher@localhost/Height_collector" 
@@ -36,7 +36,10 @@ def success():
             data=Data(email, height) # instance of the class 'Data' and passing the variable values as argument.
             db.session.add(data) # adding the instance to the 'db' object.
             db.session.commit()
-            send_email(email, height) # passing arguments to the function that have been imported.
+            average_height= db.session.query(func.avg(Data.height_received)).scalar() # here the class 'func' will apply the 'avg' method on 'height_received' column and scalar method will receive it as a number not as an object
+            average_height= round(average_height, 2)
+            count= db.session.query(Data.height_received).count()
+            send_email(email, height, average_height, count) # passing arguments to the function that have been imported.
             return render_template("success.html")
         return render_template("index.html", text="Email already exits, try a different one!")
 
