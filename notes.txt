@@ -1,0 +1,20 @@
+###### Some notes required for this project #############
+
+app.config["SQLALCHEMY_DATABASE_URI"]= "postgresql://postgres:iftakher@localhost/Height_collector" # this is to connect the flask variable to the database, first pass a list ["SQLALCHEMY_DATABASE_URI"] which is a dictionary key that is equal to 
+# 'postgresql' --> program name
+# 'postgres'  --> user name
+# 'iftakher' --> password
+# 'localhost' --> local server name
+# 'Height_collector' --> Database name
+
+db= SQLAlchemy(app) # 'db' is a object of the class 'SQLAlchemy' and inside will be the flask varible name, here it is 'app'
+
+class Data(db.Model): # 'Data' class is inheriting from 'db.Model' class
+    __tablename__= "data" # "data" is the table name on the database
+    id= db.Column(db.Integer, primary_key= True) # this is the first column
+    email_received= db.Column(db.String(120), unique= True) # 2nd column, email name typed --> can't be over 120 letters and                                                            have to be unique.
+    height_received= db.Column(db.Integer)    # 3rd column.
+
+       def __init__(self, email_received, height_received): # this is to initializing instance variables as this function will be executed right after an instance of the class 'Data' is created.
+        self.email_received= email_received
+        self.height_received= height_received

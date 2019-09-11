@@ -1,0 +1,62 @@
+html, body{
+height: 100%;
+margin: 0%;
+}
+
+.container{
+margin: 0 auto;
+height: 100%;
+width: 100%;
+background-color: #27524ff3;
+color: #eefffff3;
+overflow: hidden; /* if scrolling is given and elements go outside the size of container, slider is shown */
+text-align: center;
+}
+
+.container h1{
+font-family:  Calibri, sans-serif;
+font-size: 30px;
+color: #CCFFFF;
+margin-top: 80px;
+
+}
+
+.container h3{
+font-family: Gill Sans MT, sans-serif;
+font-size: 20px;
+
+
+}
+
+.container form{
+margin: 40px;
+
+}
+
+.container input{
+width: 350px;
+height: 20px;
+font-family: Calibri , sans-serif;
+font-size: 20px;
+margin: 5px;
+padding: 10px;
+transition: all .1s ease-in-out;
+
+
+}
+
+.container button{
+width: 70px;
+height: 30px;
+margin-top: 10px;
+background-color:#CCFFFF;
+
+}
+
+.container p{
+margin: 100px;
+font-family: Gill Sans MT, sans-serif;
+font-size: 20px;
+
+
+}

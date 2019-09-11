@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Collector App</title>
+    <link rel="stylesheet" href="../static/main.css"> 
+    <!-- ../static/main.css ==> will go 2 step up and then select the css file, 'stylesheet' ==> means this is a css file -->
+</head>
+<body>
+  <div class="container">
+    <h1>Collecting height</h1>
+    <h3>Please fill the information to see the average height of people</h3>
+    <form action="{{ url_for('success') }}" method="POST">
+        <input required type="email" placeholder="Enter your email here" title="Your email is safe with us" name="email_id"> 
+        <br>  <!-- 'name' will be used by python later --> 
+        <input required type="number" min="25" max="275" step=".1" placeholder="Enter your height here (in cm)" title="Your data is confidential to us" name="height_name"> <br>
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
